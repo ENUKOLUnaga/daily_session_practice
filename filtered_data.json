@@ -1,0 +1,52 @@
+{
+    "0-10": [],
+    "10-20": [],
+    "20-30": [],
+    "30-40": [],
+    "40-50": [],
+    "50-60": [
+        {
+            "Hub": "Hyd",
+            "ID": 8,
+            "Model": "7",
+            "Battery": 55.0,
+            "Type": "ElectricCar"
+        }
+    ],
+    "60-70": [
+        {
+            "Hub": "Hyd",
+            "ID": 7,
+            "Model": "65",
+            "Battery": 68.0,
+            "Type": "ElectricCar"
+        }
+    ],
+    "70-80": [
+        {
+            "Hub": "Hyd",
+            "ID": 10,
+            "Model": "65",
+            "Battery": 78.0,
+            "Type": "ElectricCar"
+        }
+    ],
+    "80-90": [
+        {
+            "Hub": "Hyd",
+            "ID": 9,
+            "Model": "3",
+            "Battery": 87.0,
+            "Type": "ElectricCar"
+        }
+    ],
+    "90-100": [
+        {
+            "Hub": "Hyd",
+            "ID": 65,
+            "Model": "98",
+            "Battery": 98.0,
+            "Type": "ElectricScooter"
+        }
+    ]
+}
