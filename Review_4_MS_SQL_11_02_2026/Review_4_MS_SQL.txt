@@ -1,0 +1,39 @@
+USE LMS
+--------------------------------------------------------------
+select 
+	u.user_id,
+	l.lesson_id,
+	l.title,
+	datediff(year,l.created_at,getdate()) duration,
+	a.activity_time
+from LMS.Enrollments e
+left join LMS.Users u
+on e.user_id=u.user_id
+left join LMS.Lessons l
+on l.course_id=e.course_id
+left join LMS.User_Activity a
+on a.user_id=u.user_id
+----------------------------------------------------------------
+select
+	c.course_id,
+	c.title,
+	c.created_at date_time,
+	s.submitted_at submission
+from LMS.Courses c
+left join LMS.assessments a
+on c.course_id=a.course_id
+left join LMS.Assessment_Submissions s
+on s.assessment_id=a.assessment_id
+where score>max_score
+------------------------------------------------------------------
+select
+	u.user_id,
+	u.email,
+	e.status
+from LMS.Users u
+Left join LMS.Enrollments e
+on u.user_id=e.user_id
+where e.status is not null
+
+
+
