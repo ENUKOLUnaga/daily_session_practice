@@ -1,0 +1,45 @@
+
+step:1 - starting daemons
+commands: start-dfs.sh
+	  start-yarn.sh
+
+step:2 - status of Hadoop streaming
+command: jps
+
+step:3 - creating directories in Hadoop
+root directory:
+command: hdfs dfs -mkdir -p /review
+input file directory:
+command: hdfs dfs -mkdir -p /review/raw
+output file directory:
+command: hdfs dfs -mkdir -p /review/output
+
+step:4 - downloaded dataset from Kaggle:
+https://www.kaggle.com/datasets/ibrahimshahrukh/medical-insurance-cost-dataset-usa
+
+step:5 - storing data in Hadoop 
+command: hdfs dfs -put /mnt/e/Review_data/medical_insurance_2026_kaggle.csv /review/raw/
+
+step:6 - viewing data from Hadoop 
+command:
+hdfs dfs -cat /review/raw/medical_insurance_2026_kaggle.csv | head
+
+step:7 - checking block size and status of the file
+command- hdfs fsck /review/raw/medical_insurance_2026_kaggle.csv -files -blocks -locations
+
+for large file:
+---------------
+step:8 - Downloaded large file 500 mb from this site https://www.kaggle.com/datasets/ealaxi/paysim1
+
+step:9 - storing data in Hadoop 
+command: hdfs dfs -put /mnt/e/Review_data/Fraud_data.csv /review/raw/
+
+step:10 - viewing data from Hadoop 
+command:
+hdfs dfs -cat /review/raw/Fraud_data.csv | head
+
+step:11 - checking block size and status of the file
+command- hdfs fsck /review/raw/Fraud.csv -files -blocks -locations
+
+
+
